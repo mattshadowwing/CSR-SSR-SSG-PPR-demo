@@ -100,8 +100,8 @@ export default function Home() {
               Next.js Rendering Methods Comparison
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto">
-              Explore the differences between SSR, SSG, and PPR in terms of performance,
-              network requests, and PageSpeed scores
+              Explore the differences between SSG, SSR, PPR, ISR, and CSR in terms of performance,
+              network requests, and PageSpeed scores through ecommerce examples
             </p>
           </header>
 
