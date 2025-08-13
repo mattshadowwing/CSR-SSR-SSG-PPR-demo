@@ -152,7 +152,7 @@ export default function Home() {
                 <ul className="list-disc pl-6 space-y-1">
                   <li>Deploy this app to Vercel or similar platform</li>
                   <li>Use <code className="bg-gray-100 px-2 py-1 rounded">https://pagespeed.web.dev/</code></li>
-                  <li>Test each route separately: /ssg-demo, /ssr-demo, /ppr-demo, /csr-demo</li>
+                  <li>Test each route separately: /ssg-demo, /ssr-demo, /ppr-demo, /isr-demo, /csr-demo</li>
                 </ul>
               </div>
               <div>
