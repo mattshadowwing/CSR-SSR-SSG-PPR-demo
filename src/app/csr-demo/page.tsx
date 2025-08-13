@@ -101,18 +101,22 @@ export default function CSRDemo() {
                     </>
                 ) : (
                     <>
-                        {/* User Info */}
+                        {/* User Dashboard */}
                         {user && (
                             <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-                                <h2 className="text-xl font-bold mb-3">User Information</h2>
-                                <div className="grid md:grid-cols-2 gap-4">
-                                    <div>
-                                        <span className="text-gray-500">Name:</span>
-                                        <span className="ml-2 font-semibold">{user.name}</span>
+                                <h2 className="text-xl font-bold mb-4">Gaming Dashboard - {user.name}</h2>
+                                <div className="grid md:grid-cols-3 gap-4">
+                                    <div className="bg-orange-50 rounded-lg p-4">
+                                        <div className="text-orange-600 text-sm font-medium">Gamer Level</div>
+                                        <div className="text-lg font-bold">{user.membership}</div>
                                     </div>
-                                    <div>
-                                        <span className="text-gray-500">Membership:</span>
-                                        <span className="ml-2 font-semibold text-orange-600">{user.membership}</span>
+                                    <div className="bg-purple-50 rounded-lg p-4">
+                                        <div className="text-purple-600 text-sm font-medium">Games Owned</div>
+                                        <div className="text-lg font-bold">{Math.floor(Math.random() * 50) + 25}</div>
+                                    </div>
+                                    <div className="bg-green-50 rounded-lg p-4">
+                                        <div className="text-green-600 text-sm font-medium">Hours Played</div>
+                                        <div className="text-lg font-bold">{Math.floor(Math.random() * 500) + 100}h</div>
                                     </div>
                                 </div>
                             </div>
