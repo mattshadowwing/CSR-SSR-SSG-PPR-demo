@@ -144,9 +144,47 @@ export default function CSRDemo() {
                             </div>
                         )}
 
-                        {/* Products */}
-                        <h2 className="text-2xl font-bold mb-4">Products</h2>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {/* Gaming Store Section */}
+                        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+                            <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                                <div>
+                                    <h2 className="text-2xl font-bold mb-2">GameZone - Gaming Gear Store</h2>
+                                    <p className="text-gray-600">Level up your gaming setup with premium gear</p>
+                                </div>
+                                <div className="mt-4 md:mt-0 flex gap-3">
+                                    <button className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                        Wishlist ({Math.floor(Math.random() * 8) + 2})
+                                    </button>
+                                    <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                                        Cart ({Math.floor(Math.random() * 3) + 1})
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Category Navigation */}
+                        <div className="bg-white rounded-lg shadow-md p-4 mb-8">
+                            <div className="flex flex-wrap gap-3">
+                                <span className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">
+                                    Gaming Gear
+                                </span>
+                                <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                                    PC Components
+                                </span>
+                                <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                                    Peripherals
+                                </span>
+                                <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                                    Headsets
+                                </span>
+                                <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                                    Streaming
+                                </span>
+                            </div>
+                        </div>
+
+                        <h2 className="text-2xl font-bold mb-4">Gaming Products (Loaded Dynamically)</h2>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                             {products?.map((product) => (
                                 <ProductCard key={product.id} product={product} />
                             ))}
