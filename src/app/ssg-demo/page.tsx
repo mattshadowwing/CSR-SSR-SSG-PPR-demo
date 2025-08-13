@@ -57,7 +57,44 @@ export default async function SSGDemo() {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Store Header */}
+                <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h2 className="text-2xl font-bold mb-2">Apple Store - Premium Collection</h2>
+                            <p className="text-gray-600">Experience the latest Apple products and professional accessories</p>
+                        </div>
+                        <div className="mt-4 md:mt-0">
+                            <div className="text-right">
+                                <div className="text-sm text-gray-500">Catalog Products</div>
+                                <div className="text-2xl font-bold text-green-600">{products.length}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Category Navigation */}
+                <div className="bg-white rounded-lg shadow-md p-4 mb-8">
+                    <div className="flex flex-wrap gap-3">
+                        <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                            All Products
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            Mac
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            iPad
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            Accessories
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            Audio
+                        </span>
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {products.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))}
