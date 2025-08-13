@@ -109,9 +109,44 @@ export default async function SSRDemo() {
                     </div>
                 </div>
 
-                {/* Products */}
+                {/* Store Section */}
+                <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h2 className="text-2xl font-bold mb-2">BestBuy - Electronics Superstore</h2>
+                            <p className="text-gray-600">Personalized recommendations based on your preferences</p>
+                        </div>
+                        <div className="mt-4 md:mt-0">
+                            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                View Cart ({Math.floor(Math.random() * 5) + 1})
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Category Navigation */}
+                <div className="bg-white rounded-lg shadow-md p-4 mb-8">
+                    <div className="flex flex-wrap gap-3">
+                        <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                            Recommended
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            Electronics
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            Computers
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            Gaming
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            Smart Home
+                        </span>
+                    </div>
+                </div>
+
                 <h2 className="text-2xl font-bold mb-4">Products (Fresh Data)</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {products?.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))}
