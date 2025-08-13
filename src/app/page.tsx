@@ -62,6 +62,20 @@ const renderMethods: RenderMethodCard[] = [
     hoverBorderColor: 'hover:border-purple-600'
   },
   {
+    href: '/isr-demo',
+    title: 'ISR',
+    badge: { text: 'Incremental', color: 'yellow' },
+    fullName: 'Incremental Static Regeneration',
+    description: 'Pre-rendered with background updates. Best of SSG with fresh content.',
+    metrics: {
+      networkRequests: '0 (cached)',
+      bestFor: 'Content sites',
+      pageSpeedScore: '90-100'
+    },
+    borderColor: 'border-yellow-500',
+    hoverBorderColor: 'hover:border-yellow-600'
+  },
+  {
     href: '/csr-demo',
     title: 'CSR',
     badge: { text: 'Client', color: 'orange' },
