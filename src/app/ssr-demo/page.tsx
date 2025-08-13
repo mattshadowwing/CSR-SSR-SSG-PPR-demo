@@ -70,17 +70,21 @@ export default async function SSRDemo() {
                     </div>
                 </div>
 
-                {/* User Info */}
+                {/* User Dashboard */}
                 <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-                    <h2 className="text-xl font-bold mb-3">User Information</h2>
-                    <div className="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <span className="text-gray-500">Name:</span>
-                            <span className="ml-2 font-semibold">{user.name}</span>
+                    <h2 className="text-xl font-bold mb-4">Welcome back, {user.name}!</h2>
+                    <div className="grid md:grid-cols-3 gap-4">
+                        <div className="bg-blue-50 rounded-lg p-4">
+                            <div className="text-blue-600 text-sm font-medium">Membership Status</div>
+                            <div className="text-lg font-bold">{user.membership}</div>
                         </div>
-                        <div>
-                            <span className="text-gray-500">Membership:</span>
-                            <span className="ml-2 font-semibold text-blue-600">{user.membership}</span>
+                        <div className="bg-green-50 rounded-lg p-4">
+                            <div className="text-green-600 text-sm font-medium">Last Login</div>
+                            <div className="text-lg font-bold">{new Date(user.lastLogin).toLocaleDateString()}</div>
+                        </div>
+                        <div className="bg-purple-50 rounded-lg p-4">
+                            <div className="text-purple-600 text-sm font-medium">Account Status</div>
+                            <div className="text-lg font-bold">Active</div>
                         </div>
                     </div>
                 </div>
