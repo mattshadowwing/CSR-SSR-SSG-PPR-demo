@@ -13,11 +13,14 @@ async function getProducts(): Promise<StaticData> {
     // For SSG, this runs during build, not on each request
     return {
         products: [
-            { id: 1, name: 'Premium Laptop', price: 1299, inStock: true },
-            { id: 2, name: 'Wireless Mouse', price: 49, inStock: true },
-            { id: 3, name: 'USB-C Hub', price: 79, inStock: false },
-            { id: 4, name: 'Mechanical Keyboard', price: 159, inStock: true },
-            { id: 5, name: '4K Webcam', price: 199, inStock: true },
+            { id: 1, name: 'MacBook Pro 16" M3 Max', price: 2499, inStock: true },
+            { id: 2, name: 'Logitech MX Master 3S', price: 99, inStock: true },
+            { id: 3, name: 'CalDigit TS4 Thunderbolt 4 Dock', price: 379, inStock: false },
+            { id: 4, name: 'Keychron K8 Pro Mechanical Keyboard', price: 189, inStock: true },
+            { id: 5, name: 'Sony Alpha FX30 Cinema Camera', price: 1799, inStock: true },
+            { id: 6, name: 'Dell UltraSharp 32" 4K Monitor', price: 649, inStock: true },
+            { id: 7, name: 'iPad Pro 12.9" M2', price: 1099, inStock: true },
+            { id: 8, name: 'AirPods Pro (2nd Gen)', price: 249, inStock: false },
         ],
         buildTime: new Date().toISOString(),
     }
