@@ -62,6 +62,20 @@ const renderMethods: RenderMethodCard[] = [
     hoverBorderColor: 'hover:border-purple-600'
   },
   {
+    href: '/isr-demo',
+    title: 'ISR',
+    badge: { text: 'Incremental', color: 'yellow' },
+    fullName: 'Incremental Static Regeneration',
+    description: 'Pre-rendered with background updates. Best of SSG with fresh content.',
+    metrics: {
+      networkRequests: '0 (cached)',
+      bestFor: 'Content sites',
+      pageSpeedScore: '90-100'
+    },
+    borderColor: 'border-yellow-500',
+    hoverBorderColor: 'hover:border-yellow-600'
+  },
+  {
     href: '/csr-demo',
     title: 'CSR',
     badge: { text: 'Client', color: 'orange' },
@@ -86,12 +100,12 @@ export default function Home() {
               Next.js Rendering Methods Comparison
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto">
-              Explore the differences between SSR, SSG, and PPR in terms of performance,
-              network requests, and PageSpeed scores
+              Explore the differences between SSG, SSR, PPR, ISR, and CSR in terms of performance,
+              network requests, and PageSpeed scores through ecommerce examples
             </p>
           </header>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {renderMethods.map((method) => (
                 <Link
                     key={method.href}
@@ -138,7 +152,7 @@ export default function Home() {
                 <ul className="list-disc pl-6 space-y-1">
                   <li>Deploy this app to Vercel or similar platform</li>
                   <li>Use <code className="bg-gray-100 px-2 py-1 rounded">https://pagespeed.web.dev/</code></li>
-                  <li>Test each route separately: /ssg-demo, /ssr-demo, /ppr-demo, /csr-demo</li>
+                  <li>Test each route separately: /ssg-demo, /ssr-demo, /ppr-demo, /isr-demo, /csr-demo</li>
                 </ul>
               </div>
               <div>

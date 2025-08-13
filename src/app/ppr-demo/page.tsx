@@ -52,15 +52,19 @@ async function UserInfo() {
 
     return (
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 className="text-xl font-bold mb-3">User Information (Dynamic)</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                    <span className="text-gray-500">Name:</span>
-                    <span className="ml-2 font-semibold">{user.name}</span>
+            <h2 className="text-xl font-bold mb-4">Personal Dashboard (Dynamic Content)</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-purple-50 rounded-lg p-4">
+                    <div className="text-purple-600 text-sm font-medium">Welcome</div>
+                    <div className="text-lg font-bold">{user.name}</div>
                 </div>
-                <div>
-                    <span className="text-gray-500">Membership:</span>
-                    <span className="ml-2 font-semibold text-purple-600">{user.membership}</span>
+                <div className="bg-blue-50 rounded-lg p-4">
+                    <div className="text-blue-600 text-sm font-medium">Membership</div>
+                    <div className="text-lg font-bold">{user.membership}</div>
+                </div>
+                <div className="bg-green-50 rounded-lg p-4">
+                    <div className="text-green-600 text-sm font-medium">Smart Devices</div>
+                    <div className="text-lg font-bold">{Math.floor(Math.random() * 10) + 5} Connected</div>
                 </div>
             </div>
         </div>
@@ -99,15 +103,55 @@ async function LiveStats() {
 function StaticProducts() {
     // This would normally come from a database at build time
     const products: Product[] = [
-        { id: 1, name: 'Premium Laptop', price: 1299, inStock: true },
-        { id: 2, name: 'Wireless Mouse', price: 49, inStock: true },
-        { id: 3, name: 'USB-C Hub', price: 79, inStock: false },
+        { id: 1, name: 'Amazon Echo Dot (5th Gen)', price: 49, inStock: true },
+        { id: 2, name: 'Ring Video Doorbell', price: 99, inStock: true },
+        { id: 3, name: 'Philips Hue Smart Bulb Starter Kit', price: 79, inStock: false },
+        { id: 4, name: 'Nest Learning Thermostat', price: 249, inStock: true },
+        { id: 5, name: 'TP-Link Kasa Smart Plug 4-Pack', price: 29, inStock: true },
+        { id: 6, name: 'August Smart Lock Pro', price: 199, inStock: false },
     ]
 
     return (
         <>
-            <h2 className="text-2xl font-bold mb-4">Products (Static)</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {/* Store Header */}
+            <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <h2 className="text-2xl font-bold mb-2">SmartHome Hub - Catalog Items</h2>
+                        <p className="text-gray-600">Essential smart home devices (pre-loaded catalog)</p>
+                    </div>
+                    <div className="mt-4 md:mt-0">
+                        <div className="text-right">
+                            <div className="text-sm text-gray-500">Catalog Items</div>
+                            <div className="text-2xl font-bold text-purple-600">{products.length}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Category Navigation */}
+            <div className="bg-white rounded-lg shadow-md p-4 mb-8">
+                <div className="flex flex-wrap gap-3">
+                    <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+                        Smart Home
+                    </span>
+                    <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                        Lighting
+                    </span>
+                    <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                        Security
+                    </span>
+                    <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                        Climate
+                    </span>
+                    <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                        Voice Assistants
+                    </span>
+                </div>
+            </div>
+
+            <h2 className="text-2xl font-bold mb-4">Smart Home Products (Static Catalog)</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
                 {products.map((product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}

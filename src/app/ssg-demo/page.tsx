@@ -13,11 +13,14 @@ async function getProducts(): Promise<StaticData> {
     // For SSG, this runs during build, not on each request
     return {
         products: [
-            { id: 1, name: 'Premium Laptop', price: 1299, inStock: true },
-            { id: 2, name: 'Wireless Mouse', price: 49, inStock: true },
-            { id: 3, name: 'USB-C Hub', price: 79, inStock: false },
-            { id: 4, name: 'Mechanical Keyboard', price: 159, inStock: true },
-            { id: 5, name: '4K Webcam', price: 199, inStock: true },
+            { id: 1, name: 'MacBook Pro 16" M3 Max', price: 2499, inStock: true },
+            { id: 2, name: 'Logitech MX Master 3S', price: 99, inStock: true },
+            { id: 3, name: 'CalDigit TS4 Thunderbolt 4 Dock', price: 379, inStock: false },
+            { id: 4, name: 'Keychron K8 Pro Mechanical Keyboard', price: 189, inStock: true },
+            { id: 5, name: 'Sony Alpha FX30 Cinema Camera', price: 1799, inStock: true },
+            { id: 6, name: 'Dell UltraSharp 32" 4K Monitor', price: 649, inStock: true },
+            { id: 7, name: 'iPad Pro 12.9" M2', price: 1099, inStock: true },
+            { id: 8, name: 'AirPods Pro (2nd Gen)', price: 249, inStock: false },
         ],
         buildTime: new Date().toISOString(),
     }
@@ -54,7 +57,44 @@ export default async function SSGDemo() {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Store Header */}
+                <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h2 className="text-2xl font-bold mb-2">Apple Store - Premium Collection</h2>
+                            <p className="text-gray-600">Experience the latest Apple products and professional accessories</p>
+                        </div>
+                        <div className="mt-4 md:mt-0">
+                            <div className="text-right">
+                                <div className="text-sm text-gray-500">Catalog Products</div>
+                                <div className="text-2xl font-bold text-green-600">{products.length}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Category Navigation */}
+                <div className="bg-white rounded-lg shadow-md p-4 mb-8">
+                    <div className="flex flex-wrap gap-3">
+                        <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                            All Products
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            Mac
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            iPad
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            Accessories
+                        </span>
+                        <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer">
+                            Audio
+                        </span>
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {products.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))}
